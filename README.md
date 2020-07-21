@@ -1,7 +1,7 @@
 <!-- Please do not change this html logo with link -->
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# INTRODUCTION
+# Toggle an LED using Interrupt-on-Change with PIC16F15244
 
 The 'pic16f15244-led-toggle-example' code example uses the PIC16F15244 Curiosity Nano Development board to demonstrate how to use the Interrupt-on-Change module to toggle an LED. When push-button SW0 is pressed, LED0 is turned off, and when SW0 is released, LED0 illuminates.
 
@@ -10,7 +10,6 @@ The 'pic16f15244-led-toggle-example' code example uses the PIC16F15244 Curiosity
 
 ## Related Documentation
 - [PIC16F15244 Product Page](https://www.microchip.com/wwwproducts/en/PIC16F15244)
-- [PIC16F15244 Curiosity Nano User Guide]()
 
 ## Software Used
 - MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
