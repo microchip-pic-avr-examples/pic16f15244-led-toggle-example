@@ -40,15 +40,15 @@
         "subcategories": [
             "MCC",
             [
-               "Peripherals", "Interrupt-on-Change"
+               "Peripherals", "PORT"
             ]
         ],
         "peripherals": [
-            "Interrupt-on-Change"
+            "PORT"
         ],
         "keywords": [
-            "MCC",
-            "Interrupt-on-Change"
+            "Sensors",
+            "Interrupts"
         ],
 		"additionalData": {
 			"longDescription": {
