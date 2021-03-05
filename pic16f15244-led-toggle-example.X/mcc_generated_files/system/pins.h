@@ -1,24 +1,21 @@
 /**
-  @Generated Pin Manager Header File
+  Generated Pins header File
 
-  @Company:
+  Company:
     Microchip Technology Inc.
 
-  @File Name:
-    pin_manager.h
+  File Name:
+    pins.h
 
-  @Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  Summary:
+    This is generated driver header for pins. 
 
-  @Description
-    This header file provides APIs for driver for .
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC16F15244
-        Driver Version    :  2.11
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.20
-        MPLAB 	          :  MPLAB X 5.40	
+  Description:
+    This header file provides APIs for all pins selected in the GUI.
+
+  Generation Information:
+    Driver Version:  3.0.0
+
 */
 
 /*
@@ -44,8 +41,12 @@
     SOFTWARE.
 */
 
-#ifndef PIN_MANAGER_H
-#define PIN_MANAGER_H
+#ifndef PINS_H
+#define PINS_H
+
+/**
+  Section: Included Files
+*/
 
 #include <xc.h>
 
@@ -61,7 +62,7 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
-// get/set LED0 aliases
+// get/set IO_RA2 aliases
 #define LED0_TRIS                 TRISAbits.TRISA2
 #define LED0_LAT                  LATAbits.LATA2
 #define LED0_PORT                 PORTAbits.RA2
@@ -81,7 +82,7 @@
 #define LED0_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
 #define LED0_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
 
-// get/set SW0 aliases
+// get/set IO_RC2 aliases
 #define SW0_TRIS                 TRISCbits.TRISC2
 #define SW0_LAT                  LATCbits.LATC2
 #define SW0_PORT                 PORTCbits.RC2
@@ -125,65 +126,64 @@ void PIN_MANAGER_Initialize (void);
  */
 void PIN_MANAGER_IOC(void);
 
-
 /**
  * @Param
     none
  * @Returns
     none
  * @Description
-    Interrupt on Change Handler for the IOCCF2 pin functionality
+    Interrupt on Change Handler for the RC2 pin functionality
  * @Example
-    IOCCF2_ISR();
+    RC2_ISR();
  */
-void IOCCF2_ISR(void);
+void RC2_ISR(void);
 
 /**
   @Summary
-    Interrupt Handler Setter for IOCCF2 pin interrupt-on-change functionality
+    Interrupt Handler Setter for RC2 pin interrupt-on-change functionality
 
   @Description
-    Allows selecting an interrupt handler for IOCCF2 at application runtime
+    Allows selecting an interrupt handler for RC2 at application runtime
     
   @Preconditions
-    Pin Manager intializer called
+    Pins intializer called
 
   @Returns
-    None.
+    none.
 
   @Param
     InterruptHandler function pointer.
 
   @Example
     PIN_MANAGER_Initialize();
-    IOCCF2_SetInterruptHandler(MyInterruptHandler);
+    RC2_SetInterruptHandler(MyInterruptHandler);
 
 */
-void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+void RC2_SetInterruptHandler(void (* InterruptHandler)(void));
 
 /**
   @Summary
-    Dynamic Interrupt Handler for IOCCF2 pin
+    Dynamic Interrupt Handler for RC2 pin
 
   @Description
-    This is a dynamic interrupt handler to be used together with the IOCCF2_SetInterruptHandler() method.
-    This handler is called every time the IOCCF2 ISR is executed and allows any function to be registered at runtime.
+    This is a dynamic interrupt handler to be used together with the RC2_SetInterruptHandler() method.
+    This handler is called every time the RC2 ISR is executed and allows any function to be registered at runtime.
     
   @Preconditions
-    Pin Manager intializer called
+    Pins intializer called
 
   @Returns
-    None.
+    none.
 
   @Param
-    None.
+    none.
 
   @Example
     PIN_MANAGER_Initialize();
-    IOCCF2_SetInterruptHandler(IOCCF2_InterruptHandler);
+    RC2_SetInterruptHandler(IOCCF2_InterruptHandler);
 
 */
-extern void (*IOCCF2_InterruptHandler)(void);
+extern void (*RC2_InterruptHandler)(void);
 
 /**
   @Summary
@@ -194,24 +194,25 @@ extern void (*IOCCF2_InterruptHandler)(void);
     This handler is called every time the IOCCF2 ISR is executed. 
     
   @Preconditions
-    Pin Manager intializer called
+    Pins intializer called
 
   @Returns
-    None.
+    none.
 
   @Param
-    None.
+    none.
 
   @Example
     PIN_MANAGER_Initialize();
-    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler);
+    RC2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler);
 
 */
-void IOCCF2_DefaultInterruptHandler(void);
+void RC2_DefaultInterruptHandler(void);
 
 
 
-#endif // PIN_MANAGER_H
+
+#endif // PINS_H
 /**
  End of File
 */
