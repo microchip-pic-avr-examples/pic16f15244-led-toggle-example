@@ -9,7 +9,7 @@
         "projectName": "pic16f15244-led-toggle-example",
         "shortDescription": "The 'pic16f15244-led-toggle-example' code example uses the PIC16F15244 Curiosity Nano Development board to demonstrate how to use the Interrupt-on-Change module to toggle an LED.",
         "ide": {
-            "name": "MPLABX",
+            "name": "MPLAB X",
             "semverRange": ">=5.45.0"
         },
         "compiler": [
