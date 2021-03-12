@@ -112,6 +112,11 @@ void PIN_MANAGER_Initialize(void)
     IOCCP = 0x4;
     IOCCN = 0x4;
     IOCCF = 0x0;
+
+    RC2_SetInterruptHandler(RC2_DefaultInterruptHandler);
+
+    // Enable PIE0bits.IOCIE interrupt 
+    PIE0bits.IOCIE = 1; 
 }
   
 void PIN_MANAGER_IOC(void)
@@ -149,9 +154,7 @@ void RC2_SetInterruptHandler(void (* InterruptHandler)(void)){
   Default interrupt handler for IOCCF2
 */
 void RC2_DefaultInterruptHandler(void){
-    // add your RC2 interrupt custom code
-    // or set custom function using RC2_SetInterruptHandler()
-    if(TRISAbits.TRISA2)                                                        // LED0 is an input to RA2
+    if(LED0_TRIS)                                                        // LED0 is an input to RA2
     {
         LED0_SetDigitalOutput();
     }
